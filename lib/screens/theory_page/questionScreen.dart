@@ -74,7 +74,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
       <style>
         body { 
           font-family: 'Poppins', sans-serif;
-          font-size: 32px; /* Adjust this value as needed */
+          font-size: 32px; 
           padding: 16px;
           line-height: 1.6;
           padding-bottom: 100px;
@@ -108,6 +108,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
               if (widget.topicId == "1") {
                 Navigator.of(context).pop(); // Go back if topicId is "1"
+                // hello AI i want to update here "Completed" for the first one when i click continue.
               } else {
                 Get.to(() => QuestionsScreen(
                     topicId: widget.topicId)); // Navigate to QuestionsScreen

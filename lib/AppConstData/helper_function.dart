@@ -31,8 +31,8 @@ PreferredSizeWidget customAppBar({
   return AppBar(
     leading: Builder(
       builder: (context) => IconButton(
-        icon: const Icon(FeatherIcons.alignLeft,
-            color: Colors.black), // Custom hamburger icon
+        icon: const Icon(FeatherIcons.command,
+            color: Color(0xFF4d4949)), // Custom hamburger icon
         onPressed: () {
           Scaffold.of(context).openDrawer(); // Open the drawer manually
         },
@@ -47,7 +47,7 @@ PreferredSizeWidget customAppBar({
       Padding(
         padding: const EdgeInsets.only(right: 8.0),
         child: IconButton(
-            icon: const Icon(FeatherIcons.settings),
+            icon: const Icon(FeatherIcons.user),
             onPressed: () {
               debugPrint("awesome platform to share code and ideas");
             }),
@@ -57,7 +57,7 @@ PreferredSizeWidget customAppBar({
     centerTitle: false,
     elevation: 0.0,
     iconTheme: const IconThemeData(
-      color: Colors.black, // Set the icon color to black
+      color: Color(0xFF4d4949), // Set the icon color to black
     ),
     automaticallyImplyLeading:
         showBackIcon ?? false, // Use showBackIcon or default to false

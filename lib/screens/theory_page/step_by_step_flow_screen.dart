@@ -312,10 +312,10 @@ class QuizStep extends StatelessWidget {
             height: 70,
             width: 70,
             decoration: BoxDecoration(
-              color: completed ? Color(0xFF05CB8D) : Colors.white,
+              color: completed ? const Color(0xFF05CB8D) : Colors.white,
               border: completed
                   ? null
-                  : Border.all(color: Color(0xFF05CB8D), width: 5),
+                  : Border.all(color: const Color(0xFF05CB8D), width: 5),
               shape: BoxShape.circle,
             ),
             alignment: Alignment.center,
@@ -324,7 +324,7 @@ class QuizStep extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: completed ? Colors.white : Color(0xFF05CB8D),
+                color: completed ? Colors.white : const Color(0xFF05CB8D),
               ),
             ),
           ),
