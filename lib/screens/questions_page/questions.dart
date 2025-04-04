@@ -32,7 +32,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   void initState() {
     super.initState();
-    _controller.fetchTopicQuestion(widget.topicId); // Load questions
+    _controller.fetchTopicQuestion(
+      widget.topicId,
+    ); // Load questions
   }
 
   @override
@@ -106,7 +108,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                                         width: double.infinity,
                                         color: Colors.grey[
                                             300], // Placeholder background
-                                        child: Icon(Icons.error,
+                                        child: const Icon(Icons.error,
                                             color: Colors.red, size: 50),
                                       );
                                     },

@@ -10,20 +10,28 @@ class StepsModelTopics {
 */
 
   String? id;
-  String? questionTopic;
+  String? questionText;
+  String? image_link;
+  bool? completed;
 
   StepsModelTopics({
     this.id,
-    this.questionTopic,
+    this.questionText,
+    this.image_link,
+    this.completed,
   });
   StepsModelTopics.fromJson(Map<String, dynamic> json) {
     id = json['id']?.toString();
-    questionTopic = json['question_topic']?.toString();
+    questionText = json['question_text']?.toString();
+    image_link = json['image_link']?.toString();
+    completed = json['completed']?.bool();
   }
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['id'] = id;
-    data['question_topic'] = questionTopic;
+    data['question_text'] = questionText;
+    data['image_link'] = image_link;
+    data['completed'] = completed;
     return data;
   }
 }

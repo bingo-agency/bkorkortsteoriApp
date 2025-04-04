@@ -13,11 +13,12 @@ class ApiProvider {
   }
 
   Future<GetTopicDescriptionModel> getTopicDescription(String topicId) async {
-    var response = await api.sendRequest.get("${fetchQuestionsByTopicURl}id=$topicId ");
+    var response =
+        await api.sendRequest.get("${fetchQuestionsByTopicURl}id=$topicId ");
     return GetTopicDescriptionModel.fromJson(response.data);
   }
 
-  Future<Map<String, dynamic>> getTopicQuestion(String topicId) async {
+  Future<dynamic> getTopicQuestion(String topicId) async {
     var response = await api.sendRequest.get("$getStepsQuestions$topicId ");
     return response.data;
   }

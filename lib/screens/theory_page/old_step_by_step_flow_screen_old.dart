@@ -56,7 +56,7 @@ class _StepByStepFlowState extends State<StepByStepFlow> {
                                 'index': _controller
                                     .stepModel.value.topics?[index]?.id,
                                 'topicName': _controller.stepModel.value
-                                    .topics?[index]?.questionTopic,
+                                    .topics?[index]?.questionText,
                               },
                             );
                           },
@@ -66,7 +66,7 @@ class _StepByStepFlowState extends State<StepByStepFlow> {
                                     .stepModel.value.topics?[index]?.id ??
                                 "",
                             label: _controller.stepModel.value.topics?[index]
-                                    ?.questionTopic ??
+                                    ?.questionText ??
                                 "",
                             isLeft: isLeft,
                             isLast: index ==

@@ -50,7 +50,7 @@ class _StepByStepFlowState extends State<StepByStepFlow> {
                   var topic = _controller.stepModel.value.topics![index];
                   return QuizStep(
                     number: index + 1,
-                    title: topic?.questionTopic ?? "Theory practise",
+                    title: topic?.questionText ?? "Theory practice",
                     completed:
                         false, // You can update logic for completed status
                     context: context,

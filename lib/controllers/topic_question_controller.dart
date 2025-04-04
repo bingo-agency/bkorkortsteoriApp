@@ -13,7 +13,8 @@ class TopicQuestionController extends GetxController implements GetxService {
       final model = await ApiProvider().getTopicQuestion(topicId);
 
       // Directly assign the fetched model (which is a Map) to GetTopicQuestion
-      GetTopicQuestion.value = model; // No need for toMap() if model is already a Map
+      GetTopicQuestion.value =
+          model; // No need for toMap() if model is already a Map
     } catch (e) {
       print('Error fetching data: $e');
     } finally {

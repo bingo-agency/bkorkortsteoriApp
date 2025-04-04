@@ -1,7 +1,9 @@
 import 'package:bingo_project/AppConstData/app_prefrences.dart';
 import 'package:bingo_project/AppConstData/helper_function.dart';
 import 'package:bingo_project/configurations/setLanguage.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -46,7 +48,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 description: "Essential lessons for driving success".tr,
                 subDescription: getTextIntoSecondaryLanguage(
                     "Essential lessons for driving success"),
-                child: _buildGrid(context),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceBetween, // Distributes space properly
+                  children: [
+                    const Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Theory Quiz', style: TextStyle(fontSize: 32)),
+                          Icon(
+                            FeatherIcons.arrowRightCircle,
+                            size: 40,
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 180, // Adjust width as needed
+                      height: 180, // Optional, if needed
+                      child: Image.asset(
+                        'assets/images/theoryTestIllustration.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 10),
               _buildCard(
