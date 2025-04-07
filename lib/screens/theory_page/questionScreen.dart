@@ -9,8 +9,13 @@ import '../questions_page/questions.dart';
 class QuestionScreen extends StatefulWidget {
   final String title;
   final String topicId;
+  late bool completed;
 
-  const QuestionScreen({Key? key, required this.title, required this.topicId})
+  QuestionScreen(
+      {Key? key,
+      required this.title,
+      required this.topicId,
+      required this.completed})
       : super(key: key);
 
   @override
@@ -103,12 +108,19 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 borderRadius: BorderRadius.circular(8), // Rounded corners
               ),
             ),
-            onPressed: () {
+            onPressed: () async {
               print(widget.topicId); // Debugging purpose
 
               if (widget.topicId == "1") {
+                // markTopicCompleted(widget.topicId, "123"); // Pass actual userId
+
                 Navigator.of(context).pop(); // Go back if topicId is "1"
-                // hello AI i want to update here "Completed" for the first one when i click continue.
+                // Will to update here "Completed" for the first one when i click continue.
+                widget.completed = true;
+                // await controller.markTopicCompleted(widget.topicId, "123"); // Replace with actual user ID
+
+                // controller.markTopicCompleted(
+                // widget.topicId); // ✅ Mark as complete in controller + API
               } else {
                 Get.to(() => QuestionsScreen(
                     topicId: widget.topicId)); // Navigate to QuestionsScreen

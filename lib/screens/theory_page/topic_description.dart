@@ -11,14 +11,16 @@ class TopicDescriptionFlow extends StatefulWidget {
   final String topicId;
   final String topicName;
 
-  const TopicDescriptionFlow({super.key, required this.topicId, required this.topicName});
+  const TopicDescriptionFlow(
+      {super.key, required this.topicId, required this.topicName});
 
   @override
   State<TopicDescriptionFlow> createState() => _TopicDescriptionFlowState();
 }
 
 class _TopicDescriptionFlowState extends State<TopicDescriptionFlow> {
-  final TopicDescriptionController _controller = Get.put(TopicDescriptionController());
+  final TopicDescriptionController _controller =
+      Get.put(TopicDescriptionController());
 
   @override
   void initState() {
@@ -52,11 +54,13 @@ class _TopicDescriptionFlowState extends State<TopicDescriptionFlow> {
             Expanded(
               child: SingleChildScrollView(
                 child: Html(
-                  data: _controller.GetTopicDecription.value.topics?.first?.description ?? '',
+                  data: _controller.GetTopicDecription.value.topics?.first
+                          ?.description ??
+                      '',
                   style: {
                     "p": Style(
                       fontSize: FontSize(16),
-                      lineHeight: LineHeight(1.5),
+                      lineHeight: const LineHeight(1.5),
                       margin: Margins.only(bottom: 16),
                     ),
                     "img": Style(
@@ -74,7 +78,8 @@ class _TopicDescriptionFlowState extends State<TopicDescriptionFlow> {
                 child: commonButton(
                     title: "Continue",
                     onTapp: () {
-                      Get.toNamed(Routes.getTopicQuestionsById, arguments: widget.topicId);
+                      Get.toNamed(Routes.getTopicQuestionsById,
+                          arguments: widget.topicId);
                     }),
               ),
             )

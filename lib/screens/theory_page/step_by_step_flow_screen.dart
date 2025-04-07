@@ -26,11 +26,7 @@ class _StepByStepFlowState extends State<StepByStepFlow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
-        title: 'Theory Steps',
-        showBackIcon: true,
-        titleColor: Colors.black,
-      ),
+      appBar: AppBar(),
       body: Obx(() {
         if (_controller.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
@@ -51,7 +47,7 @@ class _StepByStepFlowState extends State<StepByStepFlow> {
                   return QuizStep(
                     number: index + 1,
                     title: topic?.questionText ?? "Theory practice",
-                    completed:
+                    completed: topic?.completed ??
                         false, // You can update logic for completed status
                     context: context,
                   );
@@ -305,7 +301,12 @@ class QuizStep extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Get.to(
-          () => QuestionScreen(title: title, topicId: number.toString())),
+        () => QuestionScreen(
+          title: title,
+          topicId: number.toString(),
+          completed: completed,
+        ),
+      ),
       child: Column(
         children: [
           Container(

@@ -4,3 +4,5 @@ const String fetchQuestionsByTopicURl =
 const String getStepsUrl = "https://xn--bkrkortsteori-jmb.se/api/fetchTopics";
 const String getStepsQuestions =
     "https://xn--bkrkortsteori-jmb.se/api/fetchQuestions?user_id=1&topic_id=";
+const String updatedCompleted =
+    "https://xn--bkrkortsteori-jmb.se/api/updateComplete?user_id=1&question_id=";
